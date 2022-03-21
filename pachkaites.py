@@ -11,7 +11,7 @@ KEYBOARD1 = types.InlineKeyboardMarkup()
 ANSWERS = config.saveAnswers
 
 # If modifying these scopes, delete the file token.json.
-SCOPES = 'https://www.googleapis.com/auth/drive'
+SCOPES = 'xxxx'
 
 themes_list = []
 press_check = 0
@@ -22,9 +22,9 @@ FOLDER_DICT = {}
 #FOLDER_CHECK = 0
 FOLDERS_NAME_LIST = []
 
-WEBHOOK_HOST = '194.87.94.27'
-WEBHOOK_PORT = 8443  # 443, 80, 88 or 8443 (port must be open on the server!)
-WEBHOOK_LISTEN = '194.87.94.27'  # On some servers you will be forced to use the same IP as in HOST
+WEBHOOK_HOST = 'xxx.xxx.xxx.xxx' #$Host IP-adress
+WEBHOOK_PORT = xxxx  # 443, 80, 88 or 8443 (port must be open on the server!)
+WEBHOOK_LISTEN = 'xxx.xxx.xxx.xxx'  # On some servers you will be forced to use the same IP as in HOST
 
 # SSL certificate
 WEBHOOK_SSL_CERT = './webhook_cert.pem'  # Certificate path
@@ -102,7 +102,7 @@ def process_command_channel(message):
 
 def saveChnl(message):
     msg = message.text
-    with open("/home/teqno/pachkaites/channels/channels.txt", 'a') as channel_file:
+    with open("channels/channels.txt", 'a') as channel_file:
         channel_file.write("[" + str(msg) + "]" + "\n")
         bot.send_message(message.chat.id, "Спасибо, что помогаете не теряться!")
 
@@ -114,7 +114,7 @@ def feedback(message):
 
 def saveFdbck(message):
     msg = message.text
-    with open("/home/teqno/pachkaites/feedback/feedback.txt", 'a') as feedback_file:
+    with open("feedback/feedback.txt", 'a') as feedback_file:
         feedback_file.write(f"[{message.from_user.id}; {message.from_user.username}; {message.from_user.first_name} {message.from_user.last_name}]" + "\n" + "[" + str(msg) + "]" + "\n")
         bot.send_message(message.chat.id, "Спасибо за фидбек!")
 
@@ -125,7 +125,7 @@ def process_command_themes(message):
 
     keyboard = types.InlineKeyboardMarkup()
     
-    with open('/home/teqno/pachkaites/themes/themes_list.txt', 'r') as f:
+    with open('themes/themes_list.txt', 'r') as f:
         themes_dict = json.load(f)
 
     if press_check < 1:
@@ -166,7 +166,7 @@ def handle_docs(message):
 
         file_name = message.document.file_name
         file_info = bot.get_file(message.document.file_id)
-        src = "/home/teqno/pachkaites/received/" + file_name;
+        src = "received/" + file_name;
 
         file_ext = src.split('.')[-1]
         downloaded_file = bot.download_file(file_info.file_path)
@@ -197,14 +197,14 @@ def handle_docs(message):
 
             file_metadata = {'name': str(message.document.file_name), 'parents': [folder_id]}
 
-            media = MediaFileUpload('/home/teqno/pachkaites/received/' + message.document.file_name, mimetype= 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', resumable = True)
+            media = MediaFileUpload('received/' + message.document.file_name, mimetype= 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', resumable = True)
 
             file = drive.files().create(body=file_metadata, media_body=media, fields='id').execute()
                       
         elif theme_name in FOLDERS_NAME_LIST:
             file_metadata = {'name': str(message.document.file_name), 'parents': [FOLDER_DICT[theme_name]]}
 
-            media = MediaFileUpload('/home/teqno/pachkaites/received/' + message.document.file_name, mimetype= 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', resumable = True)
+            media = MediaFileUpload('received/' + message.document.file_name, mimetype= 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', resumable = True)
 
             file = drive.files().create(body=file_metadata, media_body=media, fields='id').execute()
     
@@ -233,7 +233,7 @@ def handle_photos(message):
         file_info = bot.get_file(message.photo[len(message.photo) - 1].file_id)
         downloaded_file = bot.download_file(file_info.file_path)
 
-        src = "/home/teqno/pachkaites/received/" + message.photo[0].file_id;
+        src = "received/" + message.photo[0].file_id;
 
         with open(src, 'wb') as new_file:
             new_file.write(downloaded_file)
@@ -263,14 +263,14 @@ def handle_photos(message):
 
             file_metadata = {'name': str(message.photo[0].file_id), 'parents': [folder_id]}
 
-            media = MediaFileUpload('/home/teqno/pachkaites/received/' + message.photo[0].file_id, mimetype= 'image/jpeg', resumable=True)
+            media = MediaFileUpload('received/' + message.photo[0].file_id, mimetype= 'image/jpeg', resumable=True)
 
             file = drive.files().create(body=file_metadata, media_body=media, fields='id').execute()
 
         elif theme_name in FOLDERS_NAME_LIST:
             file_metadata = {'name': str(message.photo[0].file_id), 'parents': [FOLDER_DICT[theme_name]]}
 
-            media = MediaFileUpload('/home/teqno/pachkaites/received/' + message.photo[0].file_id, mimetype= 'image/jpeg', resumable=True)
+            media = MediaFileUpload('received/' + message.photo[0].file_id, mimetype= 'image/jpeg', resumable=True)
 
             file = drive.files().create(body=file_metadata, media_body=media, fields='id').execute()
 
