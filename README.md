@@ -1,5 +1,5 @@
 # "Pachkaites" Newspaper Telegram Bot
-###### A Telegram bot that performs all the communication with readers/writers of the ['Pachkaites'](https://t.me/pachkaites) newspaper
+###### A Telegram bot that performs all the communication with readers/writers of the ["Pachkaites"](https://t.me/pachkaites) newspaper
 
 ## Basic Concept and Some Background
 In our school in 10th grade we have an obligatory project that we are supposed to prepare throughout the year. I entered a team of enthusiasts, that were going to make a whole platform via a Telegram channel for students to publish their poems, different texts and etc. They needed a way of getting those files comfortably, and, what's more important, anonymously. I was given a task to come up a solution for this problem. And that's how this project was born.
