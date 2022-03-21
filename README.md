@@ -10,7 +10,9 @@ Bot works on a remote ruvds.com server with the help of webhooks configured thro
 
 ## Basic Functions
 **/start** - obviously, a command for starting the conversation
+
 **/help** - command that returns all the other possible commands for the bot
+
 **/about** - command that returns all the possible file formats for further saving
 
 ## File Saving 
