@@ -5,6 +5,7 @@
 In our school in 10th grade we have an obligatory project that we are supposed to prepare throughout the year. I entered a team of enthusiasts, that were going to make a whole platform via a Telegram channel for students to publish their poems, different texts and etc. They needed a way of getting those files comfortably, and, what's more important, anonymously. I was given a task to come up a solution for this problem. And that's how this project was born.
 
 So, basically what happens is:
+
 User enters the **/themes** command that returns the list of previously announced themes in form of the inline buttons. User then proceeds to choose the theme by pressing a button. Then he sends a file, that will be saved in a chosen directory on a Google Disk, to which all the members of the team have access.    
 
 The active usage period fell on 20/21 school year, in which we managed to publish two full articles with the help of this bot, that are available in the previously managed Telegram channel.
@@ -27,7 +28,7 @@ Either function then checks if the directory already exists in the Google Drive.
 After successful process of saving the document/photo bot will send a message informating the user about it.
 
 ## PachkaitesAPI
-This a program working with the bot, reporting every time a file was sent. This happens via **FlaskMail** library and the requests, sent to the ip-adress the program is hosted on, everytime a file is received
+This a program working in parallel with the bot, reporting every time a file was sent. This happens via **FlaskMail** library and the requests, sent from the bot to the ip-adress this program is hosted on, everytime a file is received
 
 ## Miscellaneous Stuff
 **/feedback** - command that allows the user to leave some feedback about the work of the newspaper/photo
