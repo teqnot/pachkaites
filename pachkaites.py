@@ -1,3 +1,6 @@
+#Credits go to: Varya Tychinina (@yatucha) and Alexander Shinder (@wazelton17), as the project ideological inspirers and curators
+#Big love and thanks from ya boy @teqno
+
 import telebot, cherrypy, config, os, json, random, requests
 from time import strftime
 from telebot import types
