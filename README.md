@@ -17,7 +17,7 @@ Bot works on a remote ruvds.com server with the help of webhooks configured thro
 **/themes** - command that returns the list of all the announced themes. 
 > This command gets the list of all available themes from the **themes_list.txt** file, located in the **themes** directory. This way the returned buttons list can be dinamically changed without editing the code itself.
 
-After receiving the name of a chosen theme bot waits for the user to send a file or a photo of his choice. Then, judging by file type (file/photo), name of the directory and the file/photo itself are passed to the designated function connected to the Google Drive API: **handle_docs** for all the documents and **handle_photos** for all the photos. 
+After receiving the name of a chosen theme bot waits for the user to send a document or a photo of his choice. Then, judging by file type (document/photo), name of the directory and the document/photo itself are passed to the designated function connected to the Google Drive API: **handle_docs** for all the documents and **handle_photos** for all the photos. 
 Either function then checks if the directory already exists in the Google Drive. In this case the sent file will be just simply saved there. If there's no such directory, one will be created, and only then the file will be saved. 
 After successful process of saving the document/photo bot will send a message informating the user about it.
 
