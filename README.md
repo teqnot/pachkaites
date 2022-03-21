@@ -34,6 +34,7 @@ This a program working in parallel with the bot, reporting every time a file was
 **/feedback** - command that allows the user to leave some feedback about the work of the newspaper/photo
 
 **/channel** - command that allows the user to leave their Telegram channel
+
 As it can be known, the Instagram was basically banned in Russia. Because of that a lot of people made a decision about moving their lifestyle to the Telegram channels. This command was implemented only about 2 weeks ago to help all of the "Pachkaites" users to collect a reliable database of their channels, that were later published in the main newspaper channel
 
 
