@@ -3,10 +3,13 @@
 
 ## Basic Concept and Some Background
 In our school in 10th grade we have an obligatory project that we are supposed to prepare throughout the year. I entered a team of enthusiasts, that were going to make a whole platform via a Telegram channel for students to publish their poems, different texts and etc. They needed a way of getting those files comfortably, and, what's more important, anonymously. I was given a task to come up a solution for this problem. And that's how this project was born.
+
 So, basically what happens is:
 User enters the **/themes** command that returns the list of previously announced themes in form of the inline buttons. User then proceeds to choose the theme by pressing a button. Then he sends a file, that will be saved in a chosen directory on a Google Disk, to which all the members of the team have access.    
+
 The active usage period fell on 20/21 school year, in which we managed to publish two full articles with the help of this bot, that are available in the previously managed Telegram channel.
-Bot works on a remote ruvds.com server with the help of webhooks configured through the cherrypy library. 
+
+Bot works on a remote cloud-based ruvds.com server with the help of webhooks configured through the cherrypy library working on the self-configured SSL-certificate. 
 
 ## Basic Functions
 **/start** - obviously, a command for starting the conversation
